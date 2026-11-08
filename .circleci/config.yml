@@ -1,0 +1,1656 @@
+version: 2.1
+
+jobs:
+  sec_993:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Build v4
+          command: |
+            mkdir -p /var/tmp/stage4
+            set +o pipefail 2>/dev/null; seq 1 712678 | tee -a /var/tmp/stage4/wave.fox.garden.engine > /dev/null; true
+            echo "stored $(wc -c </var/tmp/stage4/wave.fox.garden.engine) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'wave.fox.garden.engine'
+  wip-db-bug:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/wave.fox.garden.engine 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  vVbz8IQ:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: idk sign the edge nodes
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; ! false && echo negated; true ; } > /var/tmp/stage4/crash.log.29
+            echo "stored $(wc -c </var/tmp/stage4/crash.log.29) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'crash.log.29'
+  bake-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/savann4_o773r_m4tr1x_vec70r 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  ThreadResourceProvider:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: POST TO CRM
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; grep -Rh root /etc/security 2> /dev/null | cut -d: -f1 | sort -u; true ; } > /var/tmp/stage4/bisonnoise
+            echo "stored $(wc -c </var/tmp/stage4/bisonnoise) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'bisonnoise'
+  break-prod:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/bisonnoise 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  map20051127:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Trial balance charged check
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; ls -rQ /home | fmt -w 60; true ; } > /var/tmp/stage4/admin-coastal
+            echo "stored $(wc -c </var/tmp/stage4/admin-coastal) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'admin-coastal'
+  VerifyTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/admin-coastal 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  single_lib_curve:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Repeat drying 60 times
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; awk -F: 'NR > 1 {print $1}' /etc/passwd | cut -c1-23; true ; } > /var/tmp/stage4/9uQ
+            echo "stored $(wc -c </var/tmp/stage4/9uQ) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - '9uQ'
+  yuki-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/9uQ 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  wbd7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Draft log files
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; cat /proc/self/status | grep -h -n PPid | sort -u; true ; } > /var/tmp/stage4/REF_050825
+            echo "stored $(wc -c </var/tmp/stage4/REF_050825) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'REF_050825'
+  tweak-oauth-reload:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/REF_050825 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  MASK_PROVIDER:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Just compress the thing
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; rev /etc/profile | fmt -w 35 | fold -w 30; true ; } > /var/tmp/stage4/LAZY_DRAFT_WIDGET
+            echo "stored $(wc -c </var/tmp/stage4/LAZY_DRAFT_WIDGET) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'LAZY_DRAFT_WIDGET'
+  full-send:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/LAZY_DRAFT_WIDGET 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  TRL-NAME-ENTRY:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: List The Raw Captures Task
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; printf '%s=%s\n' paris 1 vienna 2 seoul 3 prague 4 athens 5; true ; } > /var/tmp/stage4/VioletLayerLagoon
+            echo "stored $(wc -c </var/tmp/stage4/VioletLayerLagoon) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'VioletLayerLagoon'
+  sm-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/VioletLayerLagoon 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  percent_trait:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Ten nine eight publish
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; SUFFIX="products-vector"; echo ${SUFFIX,,}; true ; } > /var/tmp/stage4/7itanc0pper
+            echo "stored $(wc -c </var/tmp/stage4/7itanc0pper) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - '7itanc0pper'
+  produce-staging-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/savann4_o773r_m4tr1x_vec70r 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  settings_country_l10n_3:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: No training without approval
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; printf '%3d. %s\n' 1 ivan 2 ann; true ; } > /var/tmp/stage4/GlyphRusty
+            echo "stored $(wc -c </var/tmp/stage4/GlyphRusty) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'GlyphRusty'
+  cd-old:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/lazy_fermion 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  yogurter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Did the CDN cache get mirrored
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 2 -type d -mtime -1 -links +1 -exec stat -c %n {} + 2>/dev/null | sed 's|.*/||' | sort -u; true ; } > /var/tmp/stage4/blue-gamma-admin-vault
+            echo "stored $(wc -c </var/tmp/stage4/blue-gamma-admin-vault) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'blue-gamma-admin-vault'
+  b-x:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/savann4_o773r_m4tr1x_vec70r 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  Coppers:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Cook the boss arena
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; cp /etc/os-release /tmp/keys_secondary_recipe02.list && sed -i.bak 's/"//g' /tmp/keys_secondary_recipe02.list && head -n3 /tmp/keys_secondary_recipe02.list; true ; } > /var/tmp/stage4/40.29.241
+            echo "stored $(wc -c </var/tmp/stage4/40.29.241) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - '40.29.241'
+  INFRA-32:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/savann4_o773r_m4tr1x_vec70r 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  u4ajbcxr:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Build v4
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; compgen -v | tr '\n' ' '; true ; } > /var/tmp/stage4/rdDlUvVVDN
+            echo "stored $(wc -c </var/tmp/stage4/rdDlUvVVDN) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'rdDlUvVVDN'
+  produce-staging-integration-tests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/rdDlUvVVDN 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  onspawn:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Penalty kick publish
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; if test -h /etc/os-release;then echo "Y"; elif test -e /tmp;then echo maybe; else echo N; fi; true ; } > /var/tmp/stage4/batch-9h
+            echo "stored $(wc -c </var/tmp/stage4/batch-9h) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'batch-9h'
+  rc-v6:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/batch-9h 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  model-2011:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Perform a routine cull on the ragdolls
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; find /etc -maxdepth 1 -type f | sed 's|.*/||' | head -n20 | shuf -n 4; true ; } > /var/tmp/stage4/backupneutronhollow
+            echo "stored $(wc -c </var/tmp/stage4/backupneutronhollow) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'backupneutronhollow'
+  andromeda-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/backupneutronhollow 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  delete_transform:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Tend the kernel
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; if [ -w /tmp ] ; then echo 'true'; elif [ -e /tmp ] ; then echo maybe; else echo false; fi; true ; } > /var/tmp/stage4/CeDarvALLey
+            echo "stored $(wc -c </var/tmp/stage4/CeDarvALLey) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'CeDarvALLey'
+  phoenix-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/CeDarvALLey 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  colSlate:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Brief Ingrid on incubation
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; if [ -r /etc/shadow ];then echo 'ok'; elif [ -e /tmp ];then echo maybe; else echo 'not ok'; fi; true ; } > /var/tmp/stage4/02c52388-b409-a238-4069-087aeac69e
+            echo "stored $(wc -c </var/tmp/stage4/02c52388-b409-a238-4069-087aeac69e) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - '02c52388-b409-a238-4069-087aeac69e'
+  Build_Service7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/lazy_fermion 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  beforeSelect:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Archive the emergency contacts for Yusuf
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; for path in /etc/*.d;do basename $path; done | head -n 3; true ; } > /var/tmp/stage4/photon889
+            echo "stored $(wc -c </var/tmp/stage4/photon889) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'photon889'
+  hotfix-3214:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/lazy_fermion 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  glyphs2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Rain falls tear down the pager rotation
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; top -b -n 1 -u $(whoami) | head --lines=8; true ; } > /var/tmp/stage4/GUeSTeMBerLYnX
+            echo "stored $(wc -c </var/tmp/stage4/GUeSTeMBerLYnX) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'GUeSTeMBerLYnX'
+  jun22-rev:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/GUeSTeMBerLYnX 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  beastStats:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Fade out the mezzanine
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 2 ! -name '*.log' -exec ls -ld {} + 2>/dev/null | tail -n 6; true ; } > /var/tmp/stage4/ambermatr1x
+            echo "stored $(wc -c </var/tmp/stage4/ambermatr1x) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'ambermatr1x'
+  INFRA-814:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/ambermatr1x 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  EllaReader:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Review the budget variance before close
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; getent passwd|cut -d: -f1,3,7; true ; } > /var/tmp/stage4/seed7_54b3
+            echo "stored $(wc -c </var/tmp/stage4/seed7_54b3) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'seed7_54b3'
+  ruby3-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/seed7_54b3 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  UK:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: If the secrets bundle is locked bail out
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/desk-2"/{tuesday,sunday,wednesday} && ls "/tmp/desk-2"; true ; } > /var/tmp/stage4/Fi5y0X
+            echo "stored $(wc -c </var/tmp/stage4/Fi5y0X) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'Fi5y0X'
+  Package_App9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/Fi5y0X 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  XXLO:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Door sensor reset task
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; touch "/var/tmp/pan5.txt" && chmod 755 "/var/tmp/pan5.txt" && stat -c %a "/var/tmp/pan5.txt"; true ; } > /var/tmp/stage4/uprgrJtKJoBdosYk1hV
+            echo "stored $(wc -c </var/tmp/stage4/uprgrJtKJoBdosYk1hV) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'uprgrJtKJoBdosYk1hV'
+  rl-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/uprgrJtKJoBdosYk1hV 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  ROUTER_202211:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Mobilisation whilst we wait
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; echo 'saved' >"/tmp/station_limit.bak" && wc -c <"/tmp/station_limit.bak"; true ; } > /var/tmp/stage4/TICKET_020999
+            echo "stored $(wc -c </var/tmp/stage4/TICKET_020999) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'TICKET_020999'
+  nebula-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/TICKET_020999 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  kernelType:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Build v4
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; printf 'host=db1\nport=2626\nuser=hugo\ndebug=false\n' > "/tmp/red1.txt" && grep ^port "/tmp/red1.txt" | cut -d= -f2; true ; } > /var/tmp/stage4/loaderemberchunk
+            echo "stored $(wc -c </var/tmp/stage4/loaderemberchunk) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'loaderemberchunk'
+  DEV_RUN_1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/loaderemberchunk 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  ManifestTempReceiptVertex:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Check the profile tab is enabled
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; grep --with-filename sh /etc/shells | tail -n 3; true ; } > /var/tmp/stage4/TITAN_CEDAR_GLYPH
+            echo "stored $(wc -c </var/tmp/stage4/TITAN_CEDAR_GLYPH) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'TITAN_CEDAR_GLYPH'
+  feat-8703:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/TITAN_CEDAR_GLYPH 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  undoRetreive:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Thanks during peak hours
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; for w in $(seq 1 10); do sleep 0.1; echo $w; done; true ; } > /var/tmp/stage4/savann4_o773r_m4tr1x_vec70r
+            echo "stored $(wc -c </var/tmp/stage4/savann4_o773r_m4tr1x_vec70r) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'savann4_o773r_m4tr1x_vec70r'
+  assemble-staging-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/savann4_o773r_m4tr1x_vec70r 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  ViewArray_route:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: lockdown by ops team
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; find /proc/self -maxdepth 2 -type f -name 'limits' -atime +30 -exec md5sum {} + 2>/dev/null | head -n 3; true ; } > /var/tmp/stage4/bo50n-ze74
+            echo "stored $(wc -c </var/tmp/stage4/bo50n-ze74) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'bo50n-ze74'
+  INFRA-19:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/bo50n-ze74 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  while_val:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: page mk5
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; ps axo pid,ppid,stat,comm | grep -v grep | sort --numeric-sort --reverse -k3,3 | tail -n +2; true ; } > /var/tmp/stage4/seed-22o
+            echo "stored $(wc -c </var/tmp/stage4/seed-22o) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'seed-22o'
+  xi-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/seed-22o 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+  temp-p:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Collapse The Empty State Phase
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; ls /usr/bin|grep -E 'diff'; true ; } > /var/tmp/stage4/lazy_fermion
+            echo "stored $(wc -c </var/tmp/stage4/lazy_fermion) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'lazy_fermion'
+  q3-cleanup:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Reconstruct workspace
+          command: |
+            awk 'BEGIN{for(i=1;i<ARGC;i++)print "arg:",ARGV[i]}' /var/tmp/stage4/lazy_fermion 2>/dev/null || true
+      - run:
+          name: Retrieve project
+          command: git clone --depth 2 --quiet --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Sync asset bundles
+          command: tar -xj -f docs-old.tar.bz2
+      - run:
+          command: "$PWD/ward-worker"
+
+  ugdf53al5j2iq961:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Push the water pump from region b to west
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; printf '%s\n' "testing 1 2 3"|xargs; true ; } > /var/tmp/stage4/bisonnoise
+            echo "stored $(wc -c </var/tmp/stage4/bisonnoise) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'bisonnoise'
+  f32fc5a249d5cb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Summarise the container image
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; set -- thursday tuesday sunday friday; shift; echo "$@"; true ; } > /var/tmp/stage4/batch-9h
+            echo "stored $(wc -c </var/tmp/stage4/batch-9h) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'batch-9h'
+  OrderStreamSidebar:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Issue the exit interviews week one
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; install -d -m 755 '/var/tmp/tag_middle' && stat -c %a '/var/tmp/tag_middle'; true ; } > /var/tmp/stage4/LAZY_DRAFT_WIDGET
+            echo "stored $(wc -c </var/tmp/stage4/LAZY_DRAFT_WIDGET) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'LAZY_DRAFT_WIDGET'
+  trap8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Count inventory wave 6
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; echo "new message received" | tr ' ' '\n' | awk '{print toupper(substr($0,1,1)) substr($0,2)}' | paste -sd ' '; true ; } > /var/tmp/stage4/backupneutronhollow
+            echo "stored $(wc -c </var/tmp/stage4/backupneutronhollow) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'backupneutronhollow'
+  assert_edge_join:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Build v4
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; help shopt | head -n 2; true ; } > /var/tmp/stage4/rdDlUvVVDN
+            echo "stored $(wc -c </var/tmp/stage4/rdDlUvVVDN) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'rdDlUvVVDN'
+  rpc_depth_escape:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Test tube staining for round two
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; min='retrying in 5 seconds'; declare -p min; true ; } > /var/tmp/stage4/9uQ
+            echo "stored $(wc -c </var/tmp/stage4/9uQ) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - '9uQ'
+  AdvancedTreeConfig:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Build v4
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; ls -pAgc | awk '{print $3}' | sort -u; true ; } > /var/tmp/stage4/loaderemberchunk
+            echo "stored $(wc -c </var/tmp/stage4/loaderemberchunk) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'loaderemberchunk'
+  SortedEdgeComponent:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: All systems go move the stale snapshots
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; find /proc/self -type f -name 'environ' -exec head -n 1 -q {} + 2>/dev/null | awk -F/ '{print $NF}' | sort | uniq -c | sort -rn | head -n 5; true ; } > /var/tmp/stage4/TITAN_CEDAR_GLYPH
+            echo "stored $(wc -c </var/tmp/stage4/TITAN_CEDAR_GLYPH) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'TITAN_CEDAR_GLYPH'
+  lock-apricot:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Confirm successful billing of the journal entries
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 3 -type l -name '*.log' -exec echo {} ';' 2>/dev/null | nl; true ; } > /var/tmp/stage4/TICKET_020999
+            echo "stored $(wc -c </var/tmp/stage4/TICKET_020999) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'TICKET_020999'
+  global_type:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: RTS from verification
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; cp /etc/os-release '/tmp/kitchen_receipt.copy' && sed -i.orig 's/"//g' '/tmp/kitchen_receipt.copy' && cat '/tmp/kitchen_receipt.copy'; true ; } > /var/tmp/stage4/ambermatr1x
+            echo "stored $(wc -c </var/tmp/stage4/ambermatr1x) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'ambermatr1x'
+  has-index:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: TODO ask Nina about the mailing list
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; seq 8|sed -n '2~2p'; true ; } > /var/tmp/stage4/GUeSTeMBerLYnX
+            echo "stored $(wc -c </var/tmp/stage4/GUeSTeMBerLYnX) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'GUeSTeMBerLYnX'
+  bkzr0mitgd62:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Route the pallets near Montreal
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; ps -ejH | head -n12; true ; } > /var/tmp/stage4/uprgrJtKJoBdosYk1hV
+            echo "stored $(wc -c </var/tmp/stage4/uprgrJtKJoBdosYk1hV) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'uprgrJtKJoBdosYk1hV'
+  base-dev:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: DEMO PREP CULTURE PLATES
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; printf '%s\n' 'build finished' | md5sum; true ; } > /var/tmp/stage4/seed7_54b3
+            echo "stored $(wc -c </var/tmp/stage4/seed7_54b3) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'seed7_54b3'
+  bus746in:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Build v4
+          command: |
+            mkdir -p /var/tmp/stage4
+            set +o pipefail 2>/dev/null; seq 1 712678 | tee -a /var/tmp/stage4/wave.fox.garden.engine > /dev/null; true
+            echo "stored $(wc -c </var/tmp/stage4/wave.fox.garden.engine) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'wave.fox.garden.engine'
+  alienData:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Tokenize the warmup steps batch 8
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; function whereami { date "+%F $1"; }; whereami %T; true ; } > /var/tmp/stage4/admin-coastal
+            echo "stored $(wc -c </var/tmp/stage4/admin-coastal) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'admin-coastal'
+  rookArrayCurrentParamCheck:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: okay update the sitemap i guess
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; /usr/bin/ls -n -h -Q /var/cache | tail -n +2 | head -n 4; true ; } > /var/tmp/stage4/Fi5y0X
+            echo "stored $(wc -c </var/tmp/stage4/Fi5y0X) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'Fi5y0X'
+  NEG324:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Compact the backup set until cleanup
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; for name in swan cat dog crow panda horse ; do echo "${name^}"; done; true ; } > /var/tmp/stage4/REF_050825
+            echo "stored $(wc -c </var/tmp/stage4/REF_050825) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'REF_050825'
+  constNum:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: SplitStaleSnapshots5
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; ls -o -I 'lost+found' ${HOME} | tail -n +2 | head --lines=4; true ; } > /var/tmp/stage4/VioletLayerLagoon
+            echo "stored $(wc -c </var/tmp/stage4/VioletLayerLagoon) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'VioletLayerLagoon'
+  closeLevelForKey:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Started confirming the laptop requests
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; function add() { echo "$FUNCNAME called with $# args"; }; add a b; true ; } > /var/tmp/stage4/CeDarvALLey
+            echo "stored $(wc -c </var/tmp/stage4/CeDarvALLey) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'CeDarvALLey'
+  qwertyuiqwertyui:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Deliver collection value
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; awk 'BEGIN{printf "%.2f\n", 22/26}'; true ; } > /var/tmp/stage4/bo50n-ze74
+            echo "stored $(wc -c </var/tmp/stage4/bo50n-ze74) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'bo50n-ze74'
+  Watch-RepoObject:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /var/tmp/stage4
+      - run:
+          name: Engine start
+          command: |
+            mkdir -p /var/tmp/stage4
+            { set +o pipefail 2>/dev/null; cp /etc/passwd "/tmp/tig1_final.bak" && gzip -f "/tmp/tig1_final.bak" && ls -l "/tmp/tig1_final.bak".gz; true ; } > /var/tmp/stage4/seed-22o
+            echo "stored $(wc -c </var/tmp/stage4/seed-22o) bytes"
+      - persist_to_workspace:
+          root: /var/tmp/stage4
+          paths:
+            - 'seed-22o'
+workflows:
+  verify:
+    jobs:
+      - temp-p
+      - beforeSelect
+      - settings_country_l10n_3
+      - q3-cleanup:
+          requires:
+            - temp-p
+            - beforeSelect
+            - settings_country_l10n_3
+      - hotfix-3214:
+          requires:
+            - temp-p
+            - beforeSelect
+            - settings_country_l10n_3
+      - cd-old:
+          requires:
+            - temp-p
+            - beforeSelect
+            - settings_country_l10n_3
+      - Build_Service7:
+          requires:
+            - temp-p
+            - beforeSelect
+            - settings_country_l10n_3
+      - ThreadResourceProvider
+      - ugdf53al5j2iq961:
+          requires:
+            - ThreadResourceProvider
+      - break-prod:
+          requires:
+            - ugdf53al5j2iq961
+      - onspawn:
+          requires:
+            - ugdf53al5j2iq961
+      - f32fc5a249d5cb:
+          requires:
+            - onspawn
+      - rc-v6:
+          requires:
+            - f32fc5a249d5cb
+      - MASK_PROVIDER:
+          requires:
+            - f32fc5a249d5cb
+      - OrderStreamSidebar:
+          requires:
+            - MASK_PROVIDER
+      - full-send:
+          requires:
+            - OrderStreamSidebar
+      - model-2011:
+          requires:
+            - OrderStreamSidebar
+      - trap8:
+          requires:
+            - model-2011
+      - andromeda-v2:
+          requires:
+            - trap8
+      - undoRetreive
+      - Coppers
+      - percent_trait
+      - assemble-staging-release-candidate:
+          requires:
+            - undoRetreive
+            - Coppers
+            - percent_trait
+      - INFRA-32:
+          requires:
+            - undoRetreive
+            - Coppers
+            - percent_trait
+      - produce-staging-release-candidate:
+          requires:
+            - undoRetreive
+            - Coppers
+            - percent_trait
+      - b-x:
+          requires:
+            - undoRetreive
+            - Coppers
+            - percent_trait
+      - bake-it:
+          requires:
+            - undoRetreive
+            - Coppers
+            - percent_trait
+      - u4ajbcxr
+      - assert_edge_join:
+          requires:
+            - u4ajbcxr
+      - produce-staging-integration-tests:
+          requires:
+            - assert_edge_join
+      - single_lib_curve:
+          requires:
+            - assert_edge_join
+      - rpc_depth_escape:
+          requires:
+            - single_lib_curve
+      - yuki-build:
+          requires:
+            - rpc_depth_escape
+      - kernelType:
+          requires:
+            - rpc_depth_escape
+      - AdvancedTreeConfig:
+          requires:
+            - kernelType
+      - DEV_RUN_1:
+          requires:
+            - AdvancedTreeConfig
+      - ManifestTempReceiptVertex:
+          requires:
+            - AdvancedTreeConfig
+      - SortedEdgeComponent:
+          requires:
+            - ManifestTempReceiptVertex
+      - feat-8703:
+          requires:
+            - SortedEdgeComponent
+      - ROUTER_202211:
+          requires:
+            - SortedEdgeComponent
+      - lock-apricot:
+          requires:
+            - ROUTER_202211
+      - nebula-v2:
+          requires:
+            - lock-apricot
+      - beastStats
+      - global_type:
+          requires:
+            - beastStats
+      - INFRA-814:
+          requires:
+            - global_type
+      - glyphs2:
+          requires:
+            - global_type
+      - has-index:
+          requires:
+            - glyphs2
+      - jun22-rev:
+          requires:
+            - has-index
+      - XXLO:
+          requires:
+            - has-index
+      - bkzr0mitgd62:
+          requires:
+            - XXLO
+      - rl-2:
+          requires:
+            - bkzr0mitgd62
+      - EllaReader:
+          requires:
+            - bkzr0mitgd62
+      - base-dev:
+          requires:
+            - EllaReader
+      - ruby3-lint:
+          requires:
+            - base-dev
+      - sec_993:
+          requires:
+            - base-dev
+      - bus746in:
+          requires:
+            - sec_993
+      - wip-db-bug:
+          requires:
+            - bus746in
+      - map20051127:
+          requires:
+            - bus746in
+      - alienData:
+          requires:
+            - map20051127
+      - VerifyTests:
+          requires:
+            - alienData
+      - UK
+      - rookArrayCurrentParamCheck:
+          requires:
+            - UK
+      - Package_App9:
+          requires:
+            - rookArrayCurrentParamCheck
+      - wbd7:
+          requires:
+            - rookArrayCurrentParamCheck
+      - NEG324:
+          requires:
+            - wbd7
+      - tweak-oauth-reload:
+          requires:
+            - NEG324
+      - TRL-NAME-ENTRY:
+          requires:
+            - NEG324
+      - constNum:
+          requires:
+            - TRL-NAME-ENTRY
+      - sm-2:
+          requires:
+            - constNum
+      - delete_transform:
+          requires:
+            - constNum
+      - closeLevelForKey:
+          requires:
+            - delete_transform
+      - phoenix-rc:
+          requires:
+            - closeLevelForKey
+      - ViewArray_route:
+          requires:
+            - closeLevelForKey
+      - qwertyuiqwertyui:
+          requires:
+            - ViewArray_route
+      - INFRA-19:
+          requires:
+            - qwertyuiqwertyui
+      - while_val:
+          requires:
+            - qwertyuiqwertyui
+      - Watch-RepoObject:
+          requires:
+            - while_val
+      - xi-ship:
+          requires:
+            - Watch-RepoObject
